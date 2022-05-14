@@ -1,0 +1,24 @@
+  #define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main()
+{
+	int n, sum = 0,i,cnt = 0;
+	scanf("%d", &n);
+	while (1)
+	{
+		if (n == 0)
+		{
+			break;
+		}
+		if (n % 10 == 0 && cnt == 0);
+		else
+		{
+			printf("%d", n % 10);
+			cnt++;
+		}
+		sum += n % 10;
+		n /= 10;
+	}
+	printf("\n%d", sum);
+}
