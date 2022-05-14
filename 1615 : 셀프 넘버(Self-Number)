@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int g(int n)
+{
+    int sum = 0, a = n;
+    while (n) { sum += n % 10, n /= 10; }
+    return a + sum;
+}
+
+int d(int n)
+{
+
+    for (int i = 1; i <= n; i++) {
+        if (n == g(i)) return 0;
+    }
+    return n;
+}
+
+int main()
+{
+    int a, b, ans = 0;
+    scanf("%d %d", &a, &b);
+    for (a; a <= b; a++) ans += d(a);
+    printf("%d", ans);
+}
