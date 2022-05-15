@@ -1,0 +1,36 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int n, a, b, d[1010];
+
+int maxi(int a, int b)
+{
+    int max = -2147483647;
+    int i;
+    for (i = a; i <= b; i++)
+    {
+        if (max < d[i])
+        {
+            max = d[i];
+        }
+    }
+    for (i = a; i <= b; i++)
+    {
+        if (max == d[i])
+        {
+            return i;
+        }
+    }
+}
+
+int main()
+{
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++)
+        scanf("%d", &d[i]);
+
+    scanf("%d%d", &a, &b);
+
+    printf("%d\n", maxi(a, b));
+}
