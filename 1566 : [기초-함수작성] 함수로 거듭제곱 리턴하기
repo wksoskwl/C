@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int a, n;
+long long int pow(long long int num1, long long int num2)
+{
+	long long int p = 1;
+	if (num1 == 1)
+		return 1;
+	for (int i = 1; i <= num2; i++)
+	{
+		p = p * num1;
+	}
+	return p;
+}
+int main()
+{
+	scanf("%d%d", &a, &n);
+	printf("%lld\n", pow(a, n));
+}
