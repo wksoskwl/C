@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int gcd(int p, int q) 
+{
+	if (p == 0) 
+		return q; 
+	return gcd(q % p, p);
+}
+
+long long int lcm(long long int a, long long int b)
+{
+	long long int n = gcd(a, b);
+	a = a / n;
+	b = b / n;
+	return n*a*b;
+}
+
+int main()
+{
+	int a, b;
+	scanf("%d%d", &a, &b);
+	printf("%lld\n", lcm(a, b));
+}
