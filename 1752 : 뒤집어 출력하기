@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main()
+{
+    int i;
+    char c[21] = { 0 };
+    scanf("%s", c);
+    for (i = 0; c[i] != '\0'; i++);
+    i--;
+    for (; i >= 0; i--)
+    {
+        printf("%c", c[i]);
+    }
+}
