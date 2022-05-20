@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+void f(int n)
+{
+    static int num = 1;
+    printf("%d ",num++);
+    if(n == num-1)
+        return;
+    f(n);
+}
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    f(n);
+}
