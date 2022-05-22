@@ -1,0 +1,19 @@
+#include<stdio.h>
+
+int r = 0;
+int num;
+int n = 0;
+
+void f()
+{
+    r += n;
+    if(n == num) return;
+    f(++n);
+}
+
+int main()
+{
+    scanf("%d",&num);
+    f();
+    printf("%d",r);
+}
