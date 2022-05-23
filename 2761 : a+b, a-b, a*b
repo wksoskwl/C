@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main()
+{
+	int a, b,p,s,m;
+	scanf("%d %d", &a, &b);
+	p = a + b;
+	s = a - b;
+	m = a * b;
+	int t;
+	if (p > s)
+	{
+		t = p;
+		p = s;
+		s = t;
+	}
+	if (s > m)
+	{
+		t = m;
+		m = s;
+		s = t;
+	}
+	if (p > s)
+	{
+		t = p;
+		p = s;
+		s = t;
+	}
+	printf("%d", s);
+}
