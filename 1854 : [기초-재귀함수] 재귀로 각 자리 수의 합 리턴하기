@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int sum = 0;
+
+
+void f(long long int num)
+{
+	sum += num % 10;
+	if (num == 0) return;
+	f(num / 10);
+}
+
+int main()
+{
+	long long int n;
+	scanf("%lld", &n);
+	f(n);
+	printf("%d", sum);
+}
