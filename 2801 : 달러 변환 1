@@ -1,0 +1,10 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int  main()
+{
+	const int d = 1130;
+	int n;
+	scanf("%d", &n);
+	printf("%d", d * n);
+}
