@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+int main()
+{
+    char c[200];
+    int i=0;
+    char x=0;
+    while(1)
+    {
+        scanf("%c",&c[i]);
+        x=c[i];
+        if(x=='\0')  break;
+        else if(c[i]=='0')
+            printf(" ");
+        else if(c[i]>=100&&c[i]<=122)
+            x=x-3;
+        else if(c[i]=='a')
+            x='x';
+        else if(c[i]=='b')
+            x='y';
+        else if(c[i]=='c')
+            x='z';
+        printf("%c",x);
+        i++;
+    }
+}
