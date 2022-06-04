@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int n;
+
+int f(int a, int b)
+{
+	static int cnt = 1;
+	if (cnt == n)
+	{
+		return a;
+	}
+	cnt++;
+	f(b, a + b);
+}
+
+int main()
+{
+	scanf("%d", &n);
+	printf("%d", f(1, 1));
+}
