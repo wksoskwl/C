@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main()
+{
+	int map;
+	int i, j;
+	int max = 0;
+	int mx = 0, my = 0;
+	for (i = 0; i < 9; i++)
+	{
+		for (j = 0; j < 9; j++)
+		{
+			scanf("%d",&map);
+			if (map > max)
+			{
+				max = map;
+				mx = i+1;
+				my = j+1;
+			}
+		}
+	}
+	printf("%d\n%d %d", max, mx, my);
+}
