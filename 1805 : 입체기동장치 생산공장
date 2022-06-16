@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+struct elen
+{
+	int num;
+	int gas;
+};
+
+int main()
+{
+	struct elen pep[110];
+	int n, i, j;
+	int fnum, fgas;
+	scanf("%d", &n);
+	for (i = 1; i <= n; i++)
+	{
+		scanf("%d %d", &pep[i].num,&pep[i].gas);
+	}
+	for (i = 1; i <= n - 1; i++)
+	{
+		for (j = i + 1; j <= n ; j++)
+		{
+			if (pep[i].num > pep[j].num)
+			{
+				fnum = pep[i].num;
+				fgas = pep[i].gas;
+				pep[i].num = pep[j].num;
+				pep[i].gas = pep[j].gas;
+				pep[j].num = fnum;
+				pep[j].gas = fgas;
+			}
+		}
+	}
+	for (i = 1; i <= n; i++)
+	{
+		printf("%d %d\n", pep[i].num, pep[i].gas);
+	}
+	return 0;
+}
