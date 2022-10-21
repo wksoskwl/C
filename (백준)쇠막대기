@@ -1,0 +1,16 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+char sik[100001];
+int mak;
+int result;
+
+int main() {
+	scanf("%s", sik);
+	for (int i = 0; sik[i] != '\0'; i++) {
+		if (sik[i] == '(' && sik[i + 1] == '(')	mak++, result++;
+		else if (sik[i] == ')' && sik[i + 1] == ')')	mak--;
+		else if (sik[i] == '(' && sik[i + 1] == ')')	result += mak;
+	}
+	printf("%d", result);
+}
