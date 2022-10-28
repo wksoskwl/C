@@ -1,0 +1,54 @@
+#include<stdio.h>
+#define MAX_STACK_SIZE 100
+int stack[MAX_STACK_SIZE];
+int top = -1;
+char sik[MAX_STACK_SIZE];
+
+int is_full() {
+	if (top == MAX_STACK_SIZE - 1)	return 1;
+	return 0;
+}
+
+int is_empty() {
+	if (top == -1)	return 1;
+	return 0;
+}
+
+void push(int n) {
+	if (is_full()) {
+		return;
+	}
+	stack[++top] = n;
+}
+
+int pop() {
+	if (is_empty()) {
+		return -1;
+	}
+	else return stack[top--];
+}
+
+int main() {
+	int n,cnt = 0;
+	scanf("%d", &n);
+	for (int k = 0; k < n; k++) {
+		scanf("%s", sik);
+		for (int i = 0; sik[i] != '\0'; i++) {
+			if (sik[i] == 40) {
+				push(sik[i]);
+			}
+			if (sik[i] == 41) {
+				if (pop() != 40) {
+					printf("NO\n");
+					cnt = 1;
+					break;
+				}
+			}
+		}
+		if (is_empty() && cnt == 0)	printf("YES\n");
+		else if(cnt == 0) printf("NO\n");
+		cnt = 0;
+		top = -1;
+	}
+	return 0;
+}
